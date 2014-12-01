@@ -11,6 +11,10 @@ a {
 	font-weight: 300;
 }
 
+#player{
+  display: none;
+}
+
 #modal-header {
   color: #FFF;
   position:absolute;
