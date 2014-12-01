@@ -1,3 +1,11 @@
+/* INDENTATION */
+
+/* I think we're overusing the namespace pattern here.  I can imagine a
+ * top-level namespace called DreamsApp and things like LoadBar and HerpView or
+ * DerpsController are part of it, but you don't need to namespace every widget
+ * (generally).
+ *
+ */
 var LoadBar = {}
 
   LoadBar.Controller = {

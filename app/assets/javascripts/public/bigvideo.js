@@ -1,3 +1,5 @@
+/* This should go in the vendor/assets/javascripts directory */
+
 /*
 	BigVideo - The jQuery Plugin for Big Background Video (and Images)
 	by John Polacek (@johnpolacek)

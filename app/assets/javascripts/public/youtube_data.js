@@ -41,6 +41,9 @@ YouTubeData.Account = {
           // jQuery.map() iterates through all of the items in the response and
           // creates a new array that only contains the specific property we're
           // looking for: videoId.
+          /* It's strange, you included underscore, but instead are using
+           * jQuery's map function instead of underscore's
+           */
           var videoIds = $.map(response.items, function(item) {
             return item.snippet.resourceId.videoId;
           });
@@ -103,6 +106,7 @@ YouTubeData.Account = {
 
 
         VideoPlayer.main(videoArr);
+        /* Sad panda...delete! */
         // setTimeout(function() { $('#player').fadeOut(2000)
         //                         $('#player').fadeIn(4000)
         //                       }, 10000);

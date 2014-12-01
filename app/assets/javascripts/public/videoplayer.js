@@ -1,3 +1,10 @@
+/* Definitely should be coming from environmental variables
+*
+* Rename the file videoplayer.js.erb and the asset pipeline will do all the
+* magic for you.
+* */
+
+
 var clientId = '974537623396-tvvr2jn442jsf1ifr4qblfhaje5cd0i2.apps.googleusercontent.com';
 var apiKey = 'AIzaSyBHlHFpUocBCj-VbXZXy5BKaIkvXh2jpgI';
 var tag = document.createElement('script');
@@ -10,9 +17,16 @@ var player;
 function onYouTubeIframeAPIReady() {
 }
 
+/* I don't think this class is constructed properly.  You're definining a
+ * number of functions in main() when they should probably be put on the
+ * prototype
+ *
+ */
+
 VideoPlayer = {
   main: function(videos) {
 
+    /* why isn't VideoMaker it's own standalone constructor fn? */
     VideoMaker = function(userVideos) {
       this.playList = [];
       this.cueList = [];
@@ -20,11 +34,22 @@ VideoPlayer = {
       this.cueList = this.cueList.concat(userVideos)
     }
 
+    /* This code looks a lot like initialization code, why not make it the work
+     * of VideoPlayer's constructor fn? */
+
     var userList1 = new VideoMaker(videos)
 
+    // Not sure this is very valuable...why not just call playVideo() on the
+    // thing in place?
     function onPlayerReady(event) {
       event.target.playVideo();
     }
+
+    /* Not very enlightening.  False is probably clearer */
+    /* ...AAAND you don't even use it.  It's in your commented-out dead code.
+     * Your code is growing more confusing by your tolerance for unused code.
+     *
+     */
 
     var done = false;
     function onPlayerStateChange(event) {
@@ -48,6 +73,7 @@ VideoPlayer = {
     }
 
 
+    /* delete this noise */
   // setInterval( function() {if (player.getCurrentTime() > 8) {
   //   $('#player').fadeOut(3000)
   // };}, 1000)

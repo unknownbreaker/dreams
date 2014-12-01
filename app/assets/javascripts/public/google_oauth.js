@@ -1,7 +1,9 @@
 var GoogleAuth = {}
 
   GoogleAuth.Keys = {
+    // You should be passing this data as interpolated ERB e.g. <%= ENV['AWESOME_ACCOUNT'] ->
     client_id: '340894032158-a7ro9gvu0cm86sotbepj9pei5sgi1nk9.apps.googleusercontent.com',
+    // Bravo on good use of scopes.  Very responsible
     scopes: ['https://www.googleapis.com/auth/youtube','https://www.googleapis.com/auth/yt-analytics.readonly']
   }
 
@@ -89,6 +91,11 @@ var GoogleAuth = {}
     }
 }
 
+/* Note that you already used a window.onload callback, could you consolidate
+ * your "initial state" setup into one file / one callback.  I don't want to
+ * hunt across multiple files to find out where the app starts.
+ *
+ */
 $(document).ready(function(){
       $(".sign-in").on("click","a", function(event){
           event.preventDefault();
