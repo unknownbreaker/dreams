@@ -29,11 +29,16 @@ class DreamsController < ApplicationController
 
 # Fix this method to be able to find the dream by the dream_id provided/clicked by user
   def show
-    dream = Dream.find()
+    dream = Dream.find_by(key: params[:id])
 
-    respond_to do |format|
-      format.json { render json: dream.video_properties }
+    dream = dream.video_properties["dream"]
+    @vidArray = []
+
+    dream.each do |key, value|
+      @vidArray << value
     end
+
+    render 'index'
   end
 
   def client
