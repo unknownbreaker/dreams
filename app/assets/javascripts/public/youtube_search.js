@@ -73,7 +73,7 @@ YouTubeSearch.SearchBar = {
         }
 
         BerthaObjects = [];
-        searchVidArr=[]
+        vidArr=[]
         // Algorithm that gets all certian data from video objects
           function findId(object) {
             return object.id
@@ -104,7 +104,7 @@ YouTubeSearch.SearchBar = {
          });
         BerthaObjects.forEach(function(obj){
           if (obj.duration > 10){
-            searchVidArr.push(obj)
+            vidArr.push(obj)
           }
         });
           // UNCOMMENT HERE FOR TRULY RANDOM SAMPLING OF SEARCH RESULTS
@@ -113,7 +113,7 @@ YouTubeSearch.SearchBar = {
           YouTubeSearch.SearchBar.compileVideoObjects(video_objects);
           console.log(results_values);
           BackGround.View.blackOut();
-          VideoPlayer.main(searchVidArr)
+          VideoPlayer.main(vidArr)
           $("#dream-modal-container").hide();
 
         }

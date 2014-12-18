@@ -61,15 +61,18 @@ VideoPlayer = {
 
     function playTheVideo(object) {
       if(player.loadVideoById){
-        player.loadVideoById({
-          'videoId': object.id,
-          'startSeconds': object.startTime,
-          'endSeconds': object.endTime,
-          'suggestedQuality': 'large'});
-      } else {
-        player.destroy();
-        VideoPlayer.main(searchVidArr);
-      }
+      player.loadVideoById({
+        'videoId': object.id,
+        'startSeconds': object.startTime,
+        'endSeconds': object.endTime,
+        'suggestedQuality': 'large'});
+    } else {
+      console.log("oh damn");
+      player.destroy();
+      VideoPlayer.main(vidArr);
+
+    }
+
       dreamPlaylist(userList1.cueList);
     }
 
