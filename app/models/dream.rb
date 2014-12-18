@@ -3,6 +3,6 @@ class Dream < ActiveRecord::Base
   belongs_to :user
 
   def keygen
-    self.key = Faker::Lorem.characters(10)
+    self.key = Faker::Lorem.characters(20)
   end
 end
