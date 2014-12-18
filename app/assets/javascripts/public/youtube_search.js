@@ -53,15 +53,7 @@ YouTubeSearch.SearchBar = {
       }
     });
 
-
-    $('button#submit').click(function(){
-      var value = $('input#youtube').val();
-      $.youtubeAPI(value, 10); // Change integer to change number of search results
-    });
-
-
     $.youtubeAPI = function(query, max_results){
-      console.log(query);
       $.ajax({
         type: 'GET',
         url: 'https://gdata.youtube.com/feeds/api/videos?q=' + query + '&max-results=' + max_results + '&v=2&alt=jsonc',
