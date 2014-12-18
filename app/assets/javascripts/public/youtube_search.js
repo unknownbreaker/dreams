@@ -111,9 +111,9 @@ YouTubeSearch.SearchBar = {
           // video_objects = YouTubeSearch.SearchBar.sampleVideoObjects(video_objects);
 
           YouTubeSearch.SearchBar.compileVideoObjects(video_objects);
-          console.log(results_values);
           BackGround.View.blackOut();
-          VideoPlayer.main(vidArr)
+          console.log(vidArr);
+          VideoPlayer.main(vidArr);
           $("#dream-modal-container").hide();
 
         }
