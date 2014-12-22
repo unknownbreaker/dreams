@@ -47,7 +47,7 @@ VideoPlayer = {
       }
 
       if ((event.data === 0) && (userList1.cueList.length === 0)) {
-      BackGround.View.dreamHasEnded();
+      BackGround.View.dreamHasEnded()
       }
     }
 
