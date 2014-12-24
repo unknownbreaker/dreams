@@ -1,7 +1,7 @@
 class DreamsController < ApplicationController
 
-before_action :set_user, only: [:index, :create, :destroy]
-
+# JIC: Could be used if we decide to refactor and have users set, but then we might have to check if dreams exists
+# before_action :set_user, only: [:index, :create, :destroy]
 
   def index
     if current_user
@@ -30,12 +30,6 @@ before_action :set_user, only: [:index, :create, :destroy]
 
     respond_to do |format|
       format.json { render json: dream.video_properties }
-    end
-  end
-  
-  def set_user
-    if current_user
-      user = current_user
     end
   end
 
