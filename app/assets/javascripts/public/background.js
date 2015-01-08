@@ -14,7 +14,8 @@ BackGround.View ={
   },
 
   dreamHasEnded: function(){
-    if('undefined' !== typeof token){
+
+   if('undefined' !== typeof token){
    var logout = "https://accounts.google.com/o/oauth2/revoke?token=" + token;
    console.log("Wake up " + token);
    $.ajax({
@@ -24,20 +25,15 @@ BackGround.View ={
       contentType: "application/json",
       dataType: 'jsonp',
       success: function(nullResponse) {
-        $("#sign_in_btn_text, #random_btn_text ").hide();
-        $("#save_btn_text, #discard_btn_text ").show();
-        $("#modal-header").text("Keep your Dream")
-        $('.signin').text("Save your Dream");
-        $('.random').text("Discard your Dream");
-        $("#dream-modal").show();
-        $('#save_btn_text, #discard_btn_text').click(function(){
-          location.reload ();
-        })
+        endModal();
       },
       error: function(e) {
       }
     });
   } else {
+    endModal();
+  }
+   function endModal() {
     $("#sign_in_btn_text, #random_btn_text ").hide();
     $("#save_btn_text, #discard_btn_text ").show();
     $("#modal-header").text("Keep your Dream")
@@ -45,9 +41,9 @@ BackGround.View ={
     $('.random').text("Discard your Dream");
     $("#dream-modal").show();
     $('#save_btn_text, #discard_btn_text').click(function(){
-          location.reload ();
-        })
-  }
+      location.reload ();
+    });
+  };
  }
 }
 
