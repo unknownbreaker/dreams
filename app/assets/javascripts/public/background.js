@@ -30,7 +30,7 @@ BackGround.View ={
         $('.signin').text("Save your Dream");
         $('.random').text("Discard your Dream");
         $("#dream-modal").show();
-        $('#save_btn_text, #discard_btn_text').onclick(function(){
+        $('#save_btn_text, #discard_btn_text').click(function(){
           location.reload ();
         })
       },
