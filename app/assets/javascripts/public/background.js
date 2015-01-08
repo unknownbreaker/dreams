@@ -24,7 +24,15 @@ BackGround.View ={
       contentType: "application/json",
       dataType: 'jsonp',
       success: function(nullResponse) {
-        location.reload ();
+        $("#sign_in_btn_text, #random_btn_text ").hide();
+        $("#save_btn_text, #discard_btn_text ").show();
+        $("#modal-header").text("Keep your Dream")
+        $('.signin').text("Save your Dream");
+        $('.random').text("Discard your Dream");
+        $("#dream-modal").show();
+        $('#save_btn_text, #discard_btn_text').onclick(function(){
+          location.reload ();
+        })
       },
       error: function(e) {
       }
