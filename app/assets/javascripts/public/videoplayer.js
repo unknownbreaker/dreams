@@ -85,10 +85,10 @@ VideoPlayer = {
 
     function videoTimer(array) {
       if(count == 0) {
-        setTimeout(function() {videoList(array[0]), array.shift()}, 1000);
+        setTimeout(function() {videoList(array[0]), array.shift()}, 5000);
         count += 1
       } else if (array.length > 0) {
-        setTimeout(function() {videoList(array[0]), array.shift()}, 10000);
+        setTimeout(function() {videoList(array[0]), array.shift()}, 14000);
       }
     }
 
