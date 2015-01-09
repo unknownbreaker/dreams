@@ -67,7 +67,7 @@ VideoPlayer = {
         'endSeconds': object.endTime,
         'suggestedQuality': 'large'});
     } else {
-      console.log("oh damn");
+      console.log("try again");
       player.destroy();
       VideoPlayer.main(vidArr);
 
