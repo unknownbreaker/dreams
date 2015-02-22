@@ -21,3 +21,7 @@
 .DS_Store
 
 Gemfile.lock
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
