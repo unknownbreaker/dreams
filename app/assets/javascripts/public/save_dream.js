@@ -5,10 +5,11 @@ SaveDream = {
       type: 'POST',
       dataType: 'JSON',
       data: { dream: video_data },
-      success: console.log("SUCCESS!")
-    })
-    .done(function(response) {
-      console.log(response);
+      success: function(response) {
+        console.log("SUCCESS!");
+        console.log("This is the generated key that will be stored in another column in the dream model: ", response.key);
+        // console.log(response.video_properties.dream);
+      }
     })
   }
 }

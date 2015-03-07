@@ -9,10 +9,16 @@ class DreamsController < ApplicationController
   end
 
   def create
-    user = User.find_by(user_id: session[:user_id])
-    video_properties = params.to_json
-    dream = user.dreams.create(video_properties: video_properties)
-    #is saving the dream with the params passed in. need to test with click implemented
+    @user = User.find_by(user_id: session[:user_id])
+    video_properties = params
+    @dream = @user.dreams.new(video_properties: video_properties)
+    @dream.keygen
+    @dream.save
+
+    p @dream
+    respond_to do |format|
+      format.json { render json: @dream }
+    end
   end
 
 # If discard was clicked at the end of the dream, it will destroy that dream sequence
@@ -23,11 +29,16 @@ class DreamsController < ApplicationController
 
 # Fix this method to be able to find the dream by the dream_id provided/clicked by user
   def show
-    dream = Dream.find()
+    dream = Dream.find_by(key: params[:id])
 
-    respond_to do |format|
-      format.json { render json: dream.video_properties }
+    dream = dream.video_properties["dream"]
+    @vidArray = []
+
+    dream.each do |key, value|
+      @vidArray << value
     end
+
+    render 'index'
   end
 
   def client

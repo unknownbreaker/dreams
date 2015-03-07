@@ -164,6 +164,7 @@ YouTubeData.Account = {
             vidArr.push(obj)
           }
         });
+        console.log(vidArr);
         SaveDream.save(vidArr);
         VideoPlayer.main(vidArr);
       }

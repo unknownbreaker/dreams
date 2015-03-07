@@ -4,6 +4,7 @@ class CreateDreams < ActiveRecord::Migration
       t.references :user
       t.string :dream_name
       t.text :video_properties
+      t.text :key
       t.timestamps
     end
   end

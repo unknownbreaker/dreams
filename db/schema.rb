@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141130183637) do
     t.integer  "user_id"
     t.string   "dream_name"
     t.text     "video_properties"
+    t.text     "key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
