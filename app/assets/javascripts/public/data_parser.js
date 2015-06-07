@@ -8,7 +8,7 @@ DataParser = {
   	  	function getData() {
 			  	$.ajax({
 			  	type: 'GET',
-			  	url: 'https://www.googleapis.com/youtube/v3/videos?id=' + item.id.videoId + '&part=contentDetails&key=AIzaSyB_0aoJfPRmF5PGZj0uEA5InZKBT6BTELg',
+			  	url: 'https://www.googleapis.com/youtube/v3/videos?id=' + item.id.videoId + '&part=contentDetails&key=AIzaSyCGpMhIcWhtBjsh2ZmM4GPflQiwU6OHbBU',
 			  	dataType: 'jsonp',
 			  	error: function(){
 			  	  console.log("You found me!")
