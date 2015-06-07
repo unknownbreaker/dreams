@@ -75,7 +75,7 @@ VideoPlayer = {
 
     function videoList(videoId) {
       playTheVideo(videoId);
-      setTimeout(function(){player.playVideo();},2000)
+      setTimeout(function(){player.playVideo();},3000)
     }
 
     var count = 0;
