@@ -100,40 +100,6 @@
 		}
 
 		function initPlayControl() {
-			// create video controller
-			// var markup = '<div id="big-video-control-container">';
-			// markup += '<div id="big-video-control">';
-			// markup += '<a href="#" id="big-video-control-play"></a>';
-			// markup += '<div id="big-video-control-middle">';
-			// markup += '<div id="big-video-control-bar">';
-			// markup += '<div id="big-video-control-bound-left"></div>';
-			// markup += '<div id="big-video-control-progress"></div>';
-			// markup += '<div id="big-video-control-track"></div>';
-			// markup += '<div id="big-video-control-bound-right"></div>';
-			// markup += '</div>';
-			// markup += '</div>';
-			// markup += '<div id="big-video-control-timer"></div>';
-			// markup += '</div>';
-			// markup += '</div>';
-			// $('body').append(markup);
-
-			// // hide until playVideo
-			// $('#big-video-control-container').css('display','none');
-
-			// add events
-			// $('#big-video-control-track').slider({
-			// 	animate: true,
-			// 	step: 0.01,
-			// 	slide: function(e,ui) {
-			// 		isSeeking = true;
-			// 		$('#big-video-control-progress').css('width',(ui.value-0.16)+'%');
-			// 		player.currentTime((ui.value/100)*player.duration());
-			// 	},
-			// 	stop:function(e,ui) {
-			// 		isSeeking = false;
-			// 		player.currentTime((ui.value/100)*player.duration());
-			// 	}
-			// });
 			$('#big-video-control-bar').click(function(e) {
 				player.currentTime((e.offsetX/$(this).width())*player.duration());
 			});
