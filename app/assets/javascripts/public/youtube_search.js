@@ -75,7 +75,6 @@ YouTubeSearch.SearchBar = {
         success: function( response ){
         console.log(response)
         video_objects = response.items
-          YouTubeSearch.SearchBar.compileVideoObjects(video_objects);
           console.log(results_values);
           BackGround.View.blackOut();
           DataParser.findDurations(video_objects)
