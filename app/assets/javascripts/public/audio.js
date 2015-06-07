@@ -1,7 +1,7 @@
 Audio.Controller = function(){
   var audio = $(".audio_player");
 }
-Audio.Controller.prototype ={
+Audio.Controller.prototype = {
 
   audioChange: function(sourceUrl) {
     var audio = $(".audio_player");
