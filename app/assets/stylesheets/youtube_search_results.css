@@ -4,7 +4,7 @@
     height: 16px;
     vertical-align: text-bottom;
 }
-/* autocomplete adds the ui-autocomplete-loading class to the textbox when it is _busy_, use general sibling combinator ingeniously */
+
 #autocomplete.ui-autocomplete-loading ~ .loading {
     display: inline-block;
 }
@@ -36,9 +36,7 @@
 .ui-autocomplete {
     max-height: 325px;
     overflow-y: auto;
-    /* prevent horizontal scrollbar */
     overflow-x: hidden;
-
     width: 189px;
 }
 
