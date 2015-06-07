@@ -77,7 +77,7 @@ YouTubeSearch.SearchBar = {
         video_objects = response.items
           console.log(results_values);
           BackGround.View.blackOut();
-          DataParser.findDurations(video_objects)
+          setTimeout(function(){DataParser.findDurations(video_objects)}, 1000)
           $("#dream-modal-container").hide();
         }
       });
