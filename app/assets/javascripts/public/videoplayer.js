@@ -2,7 +2,7 @@ var clientId = GoogleAuth.Keys.client_id.responseText;
 var apiKey = GoogleAuth.Keys.client_id.responseText;
 var tag = document.createElement('script');
 
-tag.src = "https://www.youtube.com/iframe_api";
+tag.src = "//www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -75,7 +75,7 @@ VideoPlayer = {
 
     function videoList(videoId) {
       playTheVideo(videoId);
-      player.playVideo();
+      setTimeout(function(){player.playVideo();},2000)
     }
 
     var count = 0;
@@ -88,6 +88,9 @@ VideoPlayer = {
         setTimeout(function() {videoList(array[0]), array.shift()}, 10000);
       }
     }
+
+
+    // Algorithm that gets all certian data from video objects
 
     player = new YT.Player('player', {
       height: '576',
