@@ -67,7 +67,7 @@ YouTubeSearch.SearchBar = {
       console.log(query);
       $.ajax({
         type: 'GET',
-        url: 'https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&q=' + query + '&max-results=' + 10 + '&key=AIzaSyCGpMhIcWhtBjsh2ZmM4GPflQiwU6OHbBU',
+        url: 'https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&q=' + query + '&max-results=' + 10 + '&key=AIzaSyAH5R9a-DetfWcxRAv9yFcbJHfQhu_HY-Y',
         dataType: 'jsonp',
         error: function(){
           console.log("You found me!")
