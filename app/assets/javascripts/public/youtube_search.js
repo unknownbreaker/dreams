@@ -4,7 +4,11 @@ var results_values = [];
 
 var selected_search = false;
 
+
+
 YouTubeSearch = {}
+
+$(document).ready(function() {
 
 YouTubeSearch.SearchBar = {
   main: function() {
@@ -59,71 +63,23 @@ YouTubeSearch.SearchBar = {
       $.youtubeAPI(value, 10); // Change integer to change number of search results
     });
 
-
     $.youtubeAPI = function(query, max_results){
       console.log(query);
       $.ajax({
         type: 'GET',
-        url: 'https://gdata.youtube.com/feeds/api/videos?q=' + query + '&max-results=' + max_results + '&v=2&alt=jsonc',
+        url: 'https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&q=' + query + '&max-results=' + 10 + '&key=AIzaSyB_0aoJfPRmF5PGZj0uEA5InZKBT6BTELg',
         dataType: 'jsonp',
         error: function(){
           console.log("You found me!")
         },
         success: function( response ){
-
-        var video_objects = response.data.items;
-
-        function VideoObject(id, duration, startTime, endTime) {
-          this.id = id;
-          this.duration= duration;
-          this.startTime = startTime;
-          this.endTime = endTime;
-        }
-
-        BerthaObjects = [];
-        searchVidArr=[]
-        // Algorithm that gets all certian data from video objects
-          function findId(object) {
-            return object.id
-          }
-
-          function getTime(object) {
-            return object.duration
-          }
-
-          function randomizeVideoStart(videoStartTime) {
-            adjustedTime = videoStartTime - 12
-            return Math.floor(Math.random()*adjustedTime + 2)
-          }
-
-          function endOfDays(time) {
-            return time + 10
-          }
-
-          function dataParser(object){
-            id = findId(object);
-            duration = getTime(object);
-            startTime = randomizeVideoStart(duration)
-            endTime = endOfDays(startTime)
-            BerthaObjects.push(new VideoObject(id, duration, startTime, endTime))
-          }
-        video_objects.forEach(function(item) {
-          dataParser(item);
-         });
-        BerthaObjects.forEach(function(obj){
-          if (obj.duration > 10){
-            searchVidArr.push(obj)
-          }
-        });
-          // UNCOMMENT HERE FOR TRULY RANDOM SAMPLING OF SEARCH RESULTS
-          // video_objects = YouTubeSearch.SearchBar.sampleVideoObjects(video_objects);
-
+        console.log(response)
+        video_objects = response.items
           YouTubeSearch.SearchBar.compileVideoObjects(video_objects);
           console.log(results_values);
           BackGround.View.blackOut();
-          VideoPlayer.main(searchVidArr)
+          DataParser.findDurations(video_objects)
           $("#dream-modal-container").hide();
-
         }
       });
     }
@@ -145,7 +101,7 @@ YouTubeSearch.SearchBar = {
   }
 }
 
-$(document).ready(function() {
+
   $(".random-dream").on("click","a", function(event){
     event.preventDefault();
     $("#dream-modal").hide();
@@ -166,5 +122,4 @@ $(document).ready(function() {
      });
   });
 });
-
 
